@@ -113,7 +113,7 @@ const ProductListController = () => {
         }
         setProductLoader(false)
         setfiltersLoader(false)
-    }
+    } 
     useEffect(() => {
         fetchProducts()
     }, [filters])

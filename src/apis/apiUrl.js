@@ -7,9 +7,13 @@ switch (mode) {
   case 'local':
     domainUrl = 'http://localhost:8000'
     break
+  case 'heroku':
+    domainUrl = 'https://ringover-backend.herokuapp.com'
+    break
   default:
     domainUrl = 'http://localhost:8000'
 }
+
 
 export default {
   baseUrl: domainUrl,
@@ -27,5 +31,5 @@ export default {
   customizesCreate: domainUrl + '/api/app/create-customize',
   rating: domainUrl + '/api/app/rate',
   cart: domainUrl + '/api/app/cart',
-  order: domainUrl + '/api/app/order',
+  order: domainUrl + '/api/app/order'
 }

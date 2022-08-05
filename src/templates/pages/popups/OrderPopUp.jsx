@@ -1,6 +1,6 @@
 import { dateConverter } from "../../../helpers/helper"
 
-const OrderPopUp = ({ orderDeatils,onSubmit }) => {
+const OrderPopUp = ({ orderDeatils,loading,onSubmit }) => {
     return (
         <div className=" radius-1 p-1 column row " style={{ maxHeight: "100%" }}>
             <div className="bg-light row p-3 overflow-y-scroll" style={{ maxHeight: "100%" }}>

@@ -1,0 +1,122 @@
+:root {
+
+    --basefont: 0.816vw;
+    /* 16px base 1960 */
+
+    --baseradius: 0.510vw
+        /* 10px base 1960 */
+}
+
+@font-face {
+    font-family: gobold;
+    src: url('./../fonts/Gobold_Regular.otf');
+}
+
+@font-face {
+    font-family: productSans;
+    src: url('./../fonts/Product_Sans.ttf');
+}
+
+* {
+    font-family: productSans;
+}
+
+.font-1 {
+    font-family: gobold !important;
+}
+
+.font-2 {
+    font-family: productSans !important;
+}
+
+.body-1 {
+    
+    font-size: calc(var(--basefont) * 5);
+    line-height: 100%;
+    letter-spacing: 0.065vw;
+}
+.h1 {
+    /* font-size: 24px; */
+    font-size: calc(var(--basefont) * 2);
+    line-height: 100%;
+    letter-spacing: 0.065vw;
+}
+
+
+.h2 {
+    /* font-size: 20px; */
+    font-size: calc(var(--basefont) * 1.5);
+    line-height: 100%;
+    letter-spacing: 0.065vw;
+}
+
+.h3 {
+    /* font-size: 16px; */
+    font-size: calc(var(--basefont) * 1);
+    line-height: 100%;
+    letter-spacing: 0.065vw;
+}
+.lh-1 {
+    line-height: 150%;
+    
+}
+
+.bold-800 {
+    font-weight: 800;
+}
+
+.bold-600 {
+    font-weight: 600;
+}
+
+.bold-500 {
+    font-weight: 500;
+}
+
+.bold-400 {
+    font-weight: 400;
+}
+
+
+.radius-1 {
+    border-radius: calc(var(--baseradius)*2);
+}
+
+.radius-2 {
+    border-radius: calc(var(--baseradius)*1);
+}
+
+.radius-3 {
+    border-radius: calc(var(--baseradius)*0.5);
+
+}
+
+.radius-circle {
+    border-radius: 100%;
+}
+
+.radius-rounded {
+    border-radius: 100px;
+}
+
+
+/* extraa */
+
+.social-icon {
+    height: calc(var(--basefont)*2);
+    width: calc(var(--basefont)*2);
+    margin: calc(var(--basespace)*1);
+}
+.remove-icon{
+    height: calc(var(--basefont)*1.5);
+    width: calc(var(--basefont)*1.5);
+    transform: translate(-50%,-50%);
+    z-index: 111;
+    border: 1px solid red;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.remove-icon svg{
+    height: calc(var(--basefont)*1);
+    width: calc(var(--basefont)*1);
+}

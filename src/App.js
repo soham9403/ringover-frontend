@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './templates/components/Navbar'
 
-function App() {
+import './assets/css/theme.css'
+import './assets/css/spacing.css'
+import './assets/css/common.css'
+import './assets/css/typography.css'
+import './assets/css/app.css'
+import CustomPopUpModalProvider from './hooksAndProviders/CustomPopUpModalProvider'
+
+import AuthContextProvider from './hooksAndProviders/AuthContextProvider'
+import NavigationRoutes from './NavigationRoutes'
+import CartContextProvider from './hooksAndProviders/CartContextProvider'
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AuthContextProvider>
+      <CartContextProvider>
+      <CustomPopUpModalProvider>
+        
+          <Navbar>
+            <NavigationRoutes />
+          </Navbar>
+        
+      </CustomPopUpModalProvider>
+      </CartContextProvider>
+    </AuthContextProvider>
+  )
 }
 
-export default App;
+export default App

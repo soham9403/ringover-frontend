@@ -1,0 +1,155 @@
+:root {
+
+    --primary-color1: #000;
+    --primary-color2: #A0A1A2;
+    --primary-color3: lightgray;
+    --primary-color4: gray;
+    --primary-color5: #B49AFB;
+    --dark: #000;
+    --light: #ffffff;
+    --success: #10FF0B;
+
+    --border-width: 0.051vw;
+
+    /* 1px base 1960 */
+
+
+}
+
+*::-moz-selection {
+
+    color: #fff;
+    background: #000;
+}
+
+*::selection {
+    color: #fff;
+    background: #000;
+}
+
+.bg-1 {
+    background-color: var(--primary-color1);
+}
+
+.bg-2 {
+    background-color: var(--primary-color2);
+}
+
+.bg-3 {
+    background-color: var(--primary-color3);
+}
+
+.bg-4 {
+    background-color: var(--primary-color4);
+}
+
+.bg-5 {
+    background-color: var(--primary-color5);
+}
+
+.bg-dark {
+    background-color: var(--dark);
+}
+
+.bg-success {
+    background-color: var(--success);
+}
+
+.text-light {
+    color: var(--light);
+}
+
+.text-dark {
+    color: var(--dark);
+}
+
+.bg-light {
+    background-color: var(--light);
+}
+
+.text-1 {
+    color: var(--primary-color1);
+}
+
+.text-2 {
+    color: var(--primary-color2);
+}
+
+.text-3 {
+    color: var(--primary-color3);
+}
+
+.text-4 {
+    color: var(--primary-color4);
+}
+
+.text-5 {
+    color: var(--primary-color5);
+}
+.text-danger{
+    color: red;
+}
+.bg-danger{
+    background-color: red;
+}
+
+button:disabled{
+    background-color: var(--primary-color2) !important;
+}
+
+
+
+
+
+.shadow-1 {
+    box-shadow: 1px 1px 20px var(--primary-color3);
+}
+
+
+
+
+.border-1 {
+    border: var(--border-width) solid var(--primary-color2) !important;
+}
+
+.border-1-dotted {
+    border: calc(var(--border-width) *1) dashed var(--primary-color2) !important;
+
+}
+
+.border-t-1 {
+    border-top: var(--border-width) solid var(--primary-color2);
+}
+
+.border-b-1 {
+    border-bottom: var(--border-width) solid var(--primary-color2);
+}
+
+.border-l-1 {
+    border-left: var(--border-width) solid var(--primary-color2);
+}
+
+.border-r-1 {
+    border-right: var(--border-width) solid var(--primary-color2);
+}
+
+.border-onhover:hover {
+    border: var(--border-width) solid var(--primary-color5) !important;
+    color: var(--primary-color5) !important;
+}
+
+.border-onfocus:focus,
+.border-onfocus:focus-within {
+    border: var(--border-width) solid var(--primary-color5) !important;
+}
+
+.black-gradient{
+    /* background: rgb(0,0,0); */
+    background: linear-gradient(180deg, rgba(0,0,0,0.1081936192445727) 50%, rgba(0,0,0,0.9251050762101716) 94%);
+}
+.hoverable:hover{
+    background-color: lightgray !important;
+}
+.is-active{
+    background-color: lightgray !important;
+}

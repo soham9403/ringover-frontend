@@ -47,7 +47,7 @@ const OrderController = ({ orderDeatils }) => {
     }
 
     return (
-        <OrderPopUp onSubmit={onSubmit} orderDeatils={orderDeatils} />
+        <OrderPopUp onSubmit={onSubmit} loading={loading} orderDeatils={orderDeatils} />
     )
 }
 export default OrderController

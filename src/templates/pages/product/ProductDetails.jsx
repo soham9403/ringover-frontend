@@ -5,7 +5,7 @@ import StartRating from "../../components/StarRating"
 import CartController from "../../../controllers/CartController"
 import Loader from '../../components/Loader'
 import FilterInput from '../../components/FilterInput'
-const ProductDetails = ({ loader, addTocart, rating, rateProduct, product, similllerProducts, customization, customizeProduct, handleCustomization }) => {
+const ProductDetails = ({ loader, cartLoader, addTocart, rating, rateProduct, product, similllerProducts, customization, customizeProduct, handleCustomization }) => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
     const pathTillCategory = pathname.split('/').splice(0, 3).join('/')
@@ -65,7 +65,7 @@ const ProductDetails = ({ loader, addTocart, rating, rateProduct, product, simil
 
                                             return (
                                                 (<div className="df row row-center pt-6 pb-5 overflow-hidden" key={index}>
-                                                    <h2 className="h2 df bold-500 mr-3" style={{width:"20%"}}>{customization[key].parent.name}</h2>
+                                                    <h2 className="h2 df bold-500 mr-3" style={{ width: "20%" }}>{customization[key].parent.name}</h2>
                                                     <div className="df" style={{ flex: 1 }}>
                                                         <div className="grid-row-small df">
                                                             {
@@ -73,8 +73,8 @@ const ProductDetails = ({ loader, addTocart, rating, rateProduct, product, simil
 
                                                                     return (<div className={`grid-box-5 df `} key={itemindex}>
                                                                         <FilterInput type={'customization'} title={item.name} image={item.image} checked={handleCustomization('get', key) == item.id} onValueChange={(val) => {
-                                                                        handleCustomization('set', key, item.id)
-                                                                    }} /></div>)
+                                                                            handleCustomization('set', key, item.id)
+                                                                        }} /></div>)
 
 
                                                                 })
@@ -101,7 +101,9 @@ const ProductDetails = ({ loader, addTocart, rating, rateProduct, product, simil
                                     <StartRating onChange={(val) => rateProduct(val)} fromStart={true} value={rating} />
                                 </div>
 
-                            </div> <button className="df bg-1 pointer p-6 pl-5 pr-5 h3 text-light" onClick={addTocart}>Add to cart</button>
+                            </div> <button disabled={cartLoader} className="df bg-1 pointer p-6 pl-5 pr-5 h3 text-light" onClick={addTocart}>
+                                {cartLoader ? "Loading..." : 'Add to cart'}
+                            </button>
                             <div className="df flex-1"></div>
                         </div>
                     </>

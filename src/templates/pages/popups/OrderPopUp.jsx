@@ -15,8 +15,8 @@ const OrderPopUp = ({ orderDeatils,onSubmit }) => {
                     <span className="df h3 bold-500 mt-6 mb-4">{orderDeatils.address}</span>
                     <h2 className="h2 bold-500 df ">Delivery Date</h2>
                     <span className="df h3 bold-500 mt-6 mb-4">{orderDeatils.date}</span>
-                    <button onClick={onSubmit} autoFocus className="df row center bg-dark p-5 text-light h2 pointer">
-                        Confirm Order
+                    <button disabled={loading} onClick={onSubmit} autoFocus className="df row center bg-dark p-5 text-light h2 pointer">
+                        {loading?"Loading...":'Confirm Order'}
                     </button>
                 </div>
             </div>

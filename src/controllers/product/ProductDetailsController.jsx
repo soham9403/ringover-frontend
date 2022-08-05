@@ -26,6 +26,7 @@ const ProductDetailsController = () => {
     const [similllerProducts, setsimillerProducts] = useState([])
     const [customizationList, setCustomizationList] = useState({})
     const [customizeProduct, setCustomizationOfProduct] = useState({})
+    const [cartLoader, setCartLoader] = useState(false)
     const fetchProductDetails = async () => {
         setLoader(true)
         const resposne = await getProductDetailsBySlugApi({ slug: urlParams.product_slug })
@@ -105,12 +106,13 @@ const ProductDetailsController = () => {
             const product_id = product.id
             let customization_ids = Object.values(customizeProduct).join(',')
 
-
+            setCartLoader(true)
 
             const response = await createCartApi({
                 product_id,
                 customization_ids
             })
+
             if (response.status === 1) {
                 cart.addToCart(product)
 
@@ -124,6 +126,7 @@ const ProductDetailsController = () => {
                     }
                 })
             } else alert(response.message)
+            setCartLoader(false)
         } else {
             modal.showModal({
                 component: <SigninController callBack={() => { addTocart() }} />,
@@ -162,7 +165,7 @@ const ProductDetailsController = () => {
 
     }
     return (
-        <ProductDetails addTocart={addTocart} rating={rating} rateProduct={rateProduct} customizeProduct={customizeProduct} customization={customizationList} similllerProducts={similllerProducts} product={product} handleCustomization={handleCustomization} loader={loader} />
+        <ProductDetails cartLoader={cartLoader} addTocart={addTocart} rating={rating} rateProduct={rateProduct} customizeProduct={customizeProduct} customization={customizationList} similllerProducts={similllerProducts} product={product} handleCustomization={handleCustomization} loader={loader} />
     )
 }
 export default ProductDetailsController
